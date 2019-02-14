@@ -1,6 +1,6 @@
 <h1>Cocktails-Recipe</h1>
 <h2>Mazal Tov</h2>
-
+<div class="container">
 <% @cocktail.doses.each do |dose| %>
 
 
@@ -26,7 +26,18 @@
     </tr>
     <% end %>
     
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/09/30/10/cocktails.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5'), background-size: cover;">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+  <a class="card-link" href="#" ></a>
+</div>
+
+
+
+
+</div>
   </tbody>
+
 </table>
       
 
@@ -36,8 +47,7 @@
     <tr>
       <th><%= link_to "Back to black", cocktails_path%></th>
       <th>   </th>
-      <th><%= link_to "new dose", new_cocktail_dose_path(@cocktail)%></th>
-      
+      <th><%= link_to "new dose", new_cocktail_dose_path(@cocktail)%></th>      
     </tr>
   </tbody>
       <ul>

@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr class="pp">
       <th scope="row"></th>
       <td><%= link_to cocktail.name, cocktail_path(cocktail)%></td>
       <td><%= link_to "Delete", cocktail_path(cocktail),
@@ -31,6 +31,6 @@
   </tbody>
 </table>
 <%end%>
-<button type="button" class="btn btn-danger"><%= link_to "new",  new_cocktail_path%></button>
+<button type="button" class="btn btn-danger lol"><%= link_to "new",  new_cocktail_path%></button>
 
 
