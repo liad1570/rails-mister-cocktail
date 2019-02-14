@@ -1,15 +1,45 @@
-<h1>Cocktails#show</h1>
+<h1>Cocktails-Recipe</h1>
 <h2>Mazal Tov</h2>
-<p>This is : <%= @cocktail.name %></p>
-<% @cocktail.doses.each do |dose| %>
-<p><%= 
-link_to dose.ingredient.name, cocktail_dose_path(dose.id),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %></p>
 
-<p><%= dose.description %></p>
-<% end %>
-<p><%= link_to "Back to black", cocktails_path%></p>
- <p><%= link_to "new dose", new_cocktail_dose_path(@cocktail)%></p> 
- 
+<% @cocktail.doses.each do |dose| %>
+
+
+
+ <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cocktail Name</th>
+      <th scope="col">Ingredient</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td><%= @cocktail.name %></td>
+      <td><%= dose.ingredient.name %> -
+      	<%=link_to "Delete", cocktail_dose_path(dose.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></td>
+      <td><%= dose.description %></td>
+    </tr>
+    <% end %>
+    
+  </tbody>
+</table>
       
+
+ </ul>
+ <table >
+  <tbody>
+    <tr>
+      <th><%= link_to "Back to black", cocktails_path%></th>
+      <th>   </th>
+      <th><%= link_to "new dose", new_cocktail_dose_path(@cocktail)%></th>
+      
+    </tr>
+  </tbody>
+      <ul>
+<li><%= link_to "Back to black", cocktails_path%></li>
+ <li><%= link_to "new dose", new_cocktail_dose_path(@cocktail)%></li> 
